@@ -1,1 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate - CV Starr Disaster Relief Fund</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
 
+        body {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .header {
+            background-color: #002855;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            text-align: center;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        nav a {
+            color: #002855;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .donation-form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"] {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #dee2e6;
+            border-radius: 3px;
+        }
+
+        .amount-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .amount-button {
+            padding: 0.5rem;
+            background-color: white;
+            border: 1px solid #1a73e8;
+            color: #1a73e8;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .amount-button:hover {
+            background-color: #002855;
+            color: white;
+        }
+
+        .submit-button {
+            background-color: #1a73e8;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .submit-button:hover {
+            background-color: #1557b0;
+        }
+
+        .footer {
+            background-color: #f8f9fa;
+            text-align: center;
+            padding: 1rem;
+            border-top: 1px solid #dee2e6;
+            margin-top: 2rem;
+        }
+
+        .form-select {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #dee2e6;
+            border-radius: 3px;
+            margin-bottom: 0.5rem;
+        }
+
+        .mailing-info {
+            line-height: 1.8;
+        }
+
+        address {
+            font-size: 1.1rem;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>CV Starr Disaster Relief Fund</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="donate.html">Donate</a>
+    </nav>
+
+    <div class="container">
+        <div class="donation-form">
+            <h2 style="text-align: center; margin-bottom: 0.5rem;">Make a Donation</h2>
+            <p style="text-align: center; margin-bottom: 1.5rem; color: #666;">All donations are tax-deductible</p>
+            
+            <form id="donation-form" action="mailto:programstaff@starrfoundation.org" method="POST" enctype="text/plain">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Select Amount</label>
+                    <div class="amount-options">
+                        <button type="button" class="amount-button">$25</button>
+                        <button type="button" class="amount-button">$50</button>
+                        <button type="button" class="amount-button">$100</button>
+                        <button type="button" class="amount-button">$200</button>
+                    </div>
+                    <label for="custom-amount">Or enter custom amount:</label>
+                    <input type="number" id="custom-amount" name="amount" min="1" step="1" placeholder="$">
+                </div>
+
+                <div class="form-group">
+                    <label for="tribute">Tribute Gift (Optional)</label>
+                    <select id="tribute" name="tribute_type" class="form-select">
+                        <option value="">Select tribute type</option>
+                        <option value="in_honor">In Honor Of</option>
+                        <option value="in_memory">In Memory Of</option>
+                    </select>
+                    <input type="text" id="tribute_name" name="tribute_name" placeholder="Enter name" style="margin-top: 0.5rem;">
+                </div>
+
+                <button type="submit" class="submit-button">Donate Now</button>
+            </form>
+        </div>
+
+        <div class="mailing-info" style="max-width: 500px; margin: 2rem auto; padding: 2rem; background-color: #f8f9fa; border-radius: 5px;">
+            <h3 style="margin-bottom: 1rem;">Mail Your Gift</h3>
+            <p>To mail your gift, please send your check payable to:</p>
+            <address style="margin: 1rem 0; font-style: normal;">
+                CV Starr Disaster Relief Fund<br>
+                399 Park Avenue<br>
+                New York, NY 10022
+            </address>
+            <p style="margin-top: 1rem;">CV Starr Disaster Relief Fund is a 501(c)3 non-profit organization. Your gift is 100% tax deductible.</p>
+            <p style="margin-top: 0.5rem;"><strong>Federal Tax ID #81-4728239</strong></p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>© 2025 CV Starr Disaster Relief Fund. All rights reserved.</p>
+    </footer>
+</body>
+</html>
