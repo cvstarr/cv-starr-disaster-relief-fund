@@ -119,13 +119,21 @@
             margin-top: 2rem;
         }
 
-        @media (max-width: 600px) {
-            .container {
-                padding: 1rem;
-            }
-            .donation-form {
-                padding: 1rem;
-            }
+        .form-select {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #dee2e6;
+            border-radius: 3px;
+            margin-bottom: 0.5rem;
+        }
+
+        .mailing-info {
+            line-height: 1.8;
+        }
+
+        address {
+            font-size: 1.1rem;
+            color: #333;
         }
     </style>
 </head>
@@ -144,15 +152,15 @@
             <h2 style="text-align: center; margin-bottom: 0.5rem;">Make a Donation</h2>
             <p style="text-align: center; margin-bottom: 1.5rem; color: #666;">All donations are tax-deductible</p>
             
-            <form id="donation-form">
+            <form id="donation-form" action="mailto:programstaff@starrfoundation.org" method="POST" enctype="text/plain">
                 <div class="form-group">
                     <label for="name">Full Name</label>
-                    <input type="text" id="name" required>
+                    <input type="text" id="name" name="name" required>
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" required>
+                    <input type="email" id="email" name="email" required>
                 </div>
 
                 <div class="form-group">
@@ -164,11 +172,33 @@
                         <button type="button" class="amount-button">$200</button>
                     </div>
                     <label for="custom-amount">Or enter custom amount:</label>
-                    <input type="number" id="custom-amount" min="1" step="1" placeholder="$">
+                    <input type="number" id="custom-amount" name="amount" min="1" step="1" placeholder="$">
+                </div>
+
+                <div class="form-group">
+                    <label for="tribute">Tribute Gift (Optional)</label>
+                    <select id="tribute" name="tribute_type" class="form-select">
+                        <option value="">Select tribute type</option>
+                        <option value="in_honor">In Honor Of</option>
+                        <option value="in_memory">In Memory Of</option>
+                    </select>
+                    <input type="text" id="tribute_name" name="tribute_name" placeholder="Enter name" style="margin-top: 0.5rem;">
                 </div>
 
                 <button type="submit" class="submit-button">Donate Now</button>
             </form>
+        </div>
+
+        <div class="mailing-info" style="max-width: 500px; margin: 2rem auto; padding: 2rem; background-color: #f8f9fa; border-radius: 5px;">
+            <h3 style="margin-bottom: 1rem;">Mail Your Gift</h3>
+            <p>To mail your gift, please send your check payable to:</p>
+            <address style="margin: 1rem 0; font-style: normal;">
+                CV Starr Disaster Relief Fund<br>
+                399 Park Avenue<br>
+                New York, NY 10022
+            </address>
+            <p style="margin-top: 1rem;">CV Starr Disaster Relief Fund is a 501(c)3 non-profit organization. Your gift is 100% tax deductible.</p>
+            <p style="margin-top: 0.5rem;"><strong>Federal Tax ID #81-4728239</strong></p>
         </div>
     </div>
 
