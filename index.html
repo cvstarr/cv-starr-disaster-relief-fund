@@ -15,6 +15,7 @@
         body {
             line-height: 1.6;
             color: #333;
+            background-color: #f5f5f5;
         }
 
         .header {
@@ -25,14 +26,17 @@
         }
 
         nav {
-            background-color: #f8f9fa;
+            background-color: #002855;
             padding: 1rem;
             text-align: center;
-            border-bottom: 1px solid #dee2e6;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         nav a {
-            color: #002855;
+            color: white;
             text-decoration: none;
             margin: 0 1rem;
             font-weight: bold;
@@ -40,25 +44,37 @@
 
         nav a:hover {
             text-decoration: underline;
+            color: #ffd700;
         }
 
         .container {
             max-width: 800px;
             margin: 0 auto;
             padding: 2rem 1rem;
-        }
-
-        .hero {
-            text-align: center;
-            margin-bottom: 2rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .hero h1 {
             font-size: 2.5rem;
             color: #002855;
+            text-align: center;
+            margin-bottom: 2rem;
         }
 
-        .content {
+        .content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #002855;
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-left: 4px solid #002855;
+            border-radius: 3px;
             margin-bottom: 2rem;
         }
 
@@ -66,30 +82,41 @@
             display: inline-block;
             background-color: #2ECC40;
             color: white;
-            padding: 1.25rem 2.5rem;
+            padding: 1rem 2rem;
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
-            margin-top: 1rem;
-            font-size: 1.2rem;
             text-transform: uppercase;
+            text-align: center;
             letter-spacing: 1px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
+            margin-top: 1.5rem;
         }
 
         .donate-button:hover {
-            background-color: #29B737;
+            background-color: #26A032;
             transform: translateY(-2px);
             box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
         }
 
         .footer {
-            background-color: #f8f9fa;
+            background-color: #002855;
+            color: white;
             text-align: center;
-            padding: 1rem;
-            border-top: 1px solid #dee2e6;
+            padding: 1.5rem;
             margin-top: 2rem;
+            border-top: 2px solid #ffd700;
+        }
+
+        .footer a {
+            color: #ffd700;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
         }
 
         @media (max-width: 600px) {
@@ -118,35 +145,17 @@
         </div>
 
         <div class="content">
-            <p style="margin-bottom: 1.5rem;">In 2016, the CV Starr Disaster Relief Fund (the Fund) was formed for the employees of C.V. Starr Co., Starr International Company, Inc. and others who may wish to contribute, to provide emergency financial and other assistance to victims of natural and man-made disasters worldwide. The CV Starr Disaster Relief Fund is designed to be activated in times of crisis, particularly those that impact communities where Starr employees live and work, to support rescue, relief, and recovery efforts that are not otherwise addressed by public and private resources.</p>
-            
-            <p style="margin-bottom: 1.5rem;">The CV Starr Disaster Relief Fund makes grants to local nonprofits that are working most effectively on the ground in the disaster zones. <em>It does not make grants to individuals.</em></p>
-            
-            <p style="margin-bottom: 2rem; font-size: 1.2rem; font-weight: bold; color: #002855; background-color: #f8f9fa; padding: 1rem; border-left: 4px solid #002855; border-radius: 3px;">The CV Starr Disaster Relief Fund is now collecting contributions for the Southern California relief and recovery efforts in the wake of the devastating wildfires.</p>
-
-            <div class="mailing-info" style="background-color: #f8f9fa; padding: 2rem; border-radius: 5px; margin: 2rem 0;">
-                <p style="margin-bottom: 1rem;">If you would like to donate to disaster relief dedicated to the Southern California wildfires:</p>
-                <p style="margin-bottom: 1rem;">Please make checks payable to "CV Starr Disaster Relief Fund" and mail to:</p>
-                <address style="margin-bottom: 1.5rem; font-style: normal;">
-                    CV Starr Disaster Relief Fund<br>
-                    399 Park Avenue, 3rd Flr.<br>
-                    New York, NY 10022
-                </address>
-                <p style="margin-bottom: 1.5rem;">Please contact <a href="mailto:donate@starrdrf.org" style="color: #002855;">donate@starrdrf.org</a> for banking information needed for wire transfers and ACHs.</p>
-                
-                <div style="margin-top: 1.5rem; border-top: 1px solid #dee2e6; padding-top: 1.5rem;">
-                    <h3 style="margin-bottom: 1rem; color: #002855;">Tax Information</h3>
-                    <p style="margin-bottom: 0.75rem;">CV Starr Disaster Relief Fund is a 501(c)(3) non-profit organization and contributions are tax deductible to the extent prohibited by law.</p>
-                    <p>The CV Starr Disaster Relief Fund tax identification number (EIN) is 81-4728239.</p>
-                </div>
-            </div>
-
+            <p>In 2016, the CV Starr Disaster Relief Fund was formed to provide emergency financial and other assistance to victims of natural and man-made disasters worldwide.</p>
+            <p>The fund supports rescue, relief, and recovery efforts in crisis situations, focusing on communities where Starr employees live and work.</p>
+            <p class="highlight">The CV Starr Disaster Relief Fund is now collecting contributions for the Southern California relief and recovery efforts in the wake of the devastating wildfires.</p>
             <a href="donate.html" class="donate-button">Donate Now</a>
         </div>
     </div>
 
     <footer class="footer">
         <p>© 2025 CV Starr Disaster Relief Fund. All rights reserved.</p>
+        <p>Contact us: <a href="mailto:donate@starrdrf.org">donate@starrdrf.org</a></p>
+        <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Use</a></p>
     </footer>
 </body>
 </html>
