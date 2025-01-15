@@ -15,6 +15,7 @@
         body {
             line-height: 1.6;
             color: #333;
+            background-color: #f5f5f5;
         }
 
         .header {
@@ -25,14 +26,17 @@
         }
 
         nav {
-            background-color: #f8f9fa;
+            background-color: #002855;
             padding: 1rem;
             text-align: center;
-            border-bottom: 1px solid #dee2e6;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         nav a {
-            color: #002855;
+            color: white;
             text-decoration: none;
             margin: 0 1rem;
             font-weight: bold;
@@ -40,12 +44,16 @@
 
         nav a:hover {
             text-decoration: underline;
+            color: #ffd700;
         }
 
         .container {
             max-width: 800px;
             margin: 0 auto;
             padding: 2rem 1rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .donation-form {
@@ -55,15 +63,54 @@
         }
 
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .form-group h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-group p {
+            margin-bottom: 1rem;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #2ECC40;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            text-transform: uppercase;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #26A032;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
         }
 
         .footer {
-            background-color: #f8f9fa;
+            background-color: #002855;
+            color: white;
             text-align: center;
-            padding: 1rem;
-            border-top: 1px solid #dee2e6;
+            padding: 1.5rem;
             margin-top: 2rem;
+            border-top: 2px solid #ffd700;
+        }
+
+        .footer a {
+            color: #ffd700;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
         }
 
         @media (max-width: 600px) {
@@ -72,6 +119,9 @@
             }
             .donation-form {
                 padding: 1rem;
+            }
+            .form-group h3 {
+                font-size: 1.2rem;
             }
         }
     </style>
@@ -88,37 +138,35 @@
 
     <div class="container">
         <div class="donation-form">
-            <h2 style="text-align: center; margin-bottom: 2rem; color: #002855;">WAYS TO DONATE</h2>
+            <h2 style="text-align: center; margin-bottom: 2rem; color: #002855;">Ways to Donate</h2>
 
-            <div class="form-group" style="background-color: #f8f9fa; padding: 2rem; border-radius: 5px; margin-bottom: 2rem;">
-                <h3 style="color: #002855; margin-bottom: 1rem;">Donate by Check</h3>
-                <p style="margin-bottom: 1rem;">Please make checks payable to "CV Starr Disaster Relief Fund" and mail to:</p>
-                <address style="margin-bottom: 1rem; font-style: normal;">
+            <div class="form-group">
+                <h3 style="color: #002855;">Donate by Check</h3>
+                <p>Please make checks payable to "CV Starr Disaster Relief Fund" and mail to:</p>
+                <address style="font-style: normal;">
                     CV Starr Disaster Relief Fund<br>
                     399 Park Ave, 3rd Floor<br>
                     New York, NY 10022
                 </address>
                 <div style="text-align: center; margin-top: 1.5rem;">
-                    <a href="https://drive.google.com/uc?export=download&id=1Cs46JRtbTruk0ORolHb4-8W6CJK1OR4P" 
-                       style="display: inline-block; background-color: #002855; color: white; padding: 0.75rem 2rem; text-decoration: none; border-radius: 4px; font-weight: bold;">
-                       Download Form
+                    <a href="https://drive.google.com/uc?export=download&id=1Cs46JRtbTruk0ORolHb4-8W6CJK1OR4P" class="button">
+                        Download Form
                     </a>
                 </div>
             </div>
 
-            <div class="form-group" style="background-color: #f8f9fa; padding: 2rem; border-radius: 5px; margin-bottom: 2rem;">
-                <h3 style="color: #002855; margin-bottom: 1rem;">Donate via Wire Transfer or ACH</h3>
-                <p>Please contact <a href="mailto:donate@starrdrf.org" style="color: #002855; text-decoration: underline;">donate@starrdrf.org</a> for our banking information needed for wire transfers and ACHs.</p>
+            <div class="form-group">
+                <h3 style="color: #002855;">Donate via Wire Transfer or ACH</h3>
+                <p>For banking information please contact <a href="mailto:donate@starrdrf.org" style="color: #002855; text-decoration: underline;">donate@starrdrf.org</a>.</p>
             </div>
 
-            <div class="form-group" style="background-color: #f8f9fa; padding: 2rem; border-radius: 5px;">
-                <h3 style="color: #002855; margin-bottom: 1rem;">Matching Gifts: Double the Impact of Your Donation</h3>
-                <p style="margin-bottom: 1rem;">If you are an employee of C.V. Starr Co., or Starr International Companies, your donation could be matched dollar for dollar. Use the Company's matching gift platform to submit your receipt.</p>
-                <p style="margin-bottom: 1rem;"><strong>Please note:</strong> the CV Starr Disaster Relief Fund EIN is 81-4728239</p>
-                <p style="margin-bottom: 1rem;"><strong>For Starr Employees:</strong> Access the Matching Gift Program Instructions & Application in the Learning Development Documents</p>
+            <div class="form-group">
+                <h3 style="color: #002855;">Matching Gifts: Double the Impact of Your Donation</h3>
+                <p>If you are an employee of C.V. Starr Co., or Starr International Companies, your donation could be matched dollar for dollar. Use the Company's matching gift platform to submit your receipt.</p>
+                <p><strong>Please note:</strong> the CV Starr Disaster Relief Fund EIN is 81-4728239</p>
+                <p><strong>For Starr Employees:</strong> Access the Matching Gift Program Instructions & Application in the Learning Development Documents</p>
                 <div style="text-align: center; margin-top: 1.5rem;">
-                    <a href="https://starrit.sharepoint.com/:b:/r/sites/starrportal-learningdevelopment-prod/Learning%20Development%20Documents/Matching%20Gift%20Instructions/Matching%20Gift%20Program%20Instructions%20%26%20Application%20(edit%20enabled).pdf?csf=1&web=1&e=0BfcHm" 
-                       style="display: inline-block; background-color: #002855; color: white; padding: 0.75rem 2rem; text-decoration: none; border-radius: 4px; font-weight: bold;">Log In</a>
+                    <a href="https://starrit.sharepoint.com/:b:/r/sites/starrportal-learningdevelopment-prod/Learning%20Development%20Documents/Matching%20Gift%20Instructions/Matching%20Gift%20Program%20Instructions%20%26%20Application%20(edit%20enabled).pdf?csf=1&web=1&e=0BfcHm" class="button">Log In</a>
                 </div>
             </div>
 
@@ -127,6 +175,8 @@
 
     <footer class="footer">
         <p>© 2025 CV Starr Disaster Relief Fund. All rights reserved.</p>
+        <p>Contact us: <a href="mailto:donate@starrdrf.org">donate@starrdrf.org</a></p>
+        <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Use</a></p>
     </footer>
 </body>
 </html>
